@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Progress navigation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <nav class="steps">
+        <li class="step-active" data-key="1">Choose title</li>
+        <li data-key="2">Choose description</li>
+        <li data-key="3">Confirm data</li>
+      </nav>
+      <div class="instruction instruction-visible" data-key="1">
+        <p>Choose title content</p>
+        <button data-key="2" data-type="next">Submit title</button>
+      </div>
+      <div class="instruction " data-key="2">
+        <p>Choose description content</p>
+        <button data-key="1" data-type="back">Back</button>
+        <button data-key="3" data-type="next">Submit description</button>
+      </div>
+      <div class="instruction" data-key="3">
+        <p>Are you happy now?</p>
+        <button data-key="2" data-type="back">No, go back</button>
+        <button data-key="4" data-type="next">Yes, go ahead</button>
+      </div>
+      <div class="instruction finish" data-key="4">
+        <p>Ok, we're done. Thanks for sending us your data!</p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
