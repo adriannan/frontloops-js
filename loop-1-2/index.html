@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Progress navigation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input type="number" placeholder="Enter tab index" />
+        <button class="btn-change">Change tab</button>
+      </form>
+      <div class="tabs">
+        <button class="tab tab-active" data-key="1">positive</button>
+        <button class="tab" data-key="2">negative</button>
+        <button class="tab" data-key="3">neutral</button>
+      </div>
+      <div class="content content-visible" data-key="1">Positive content</div>
+      <div class="content" data-key="2">Negative content</div>
+      <div class="content" data-key="3">Neutral content</div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
