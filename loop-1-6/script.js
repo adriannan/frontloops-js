@@ -16,25 +16,17 @@ addEventListener("mousemove", e => {
 
   if (isClicked) {
     if (clX < winX / 2 && clY < winY / 2) {
-      deg = (clY * clX) / 4000;
-
-      card.style.transform = `perspective(1000px) rotate3d(${clX},${-clY},0,${45 -
-        deg}deg)`;
+      deg = (winY / 2 - Math.abs(clY)) / 20 + (winX / 2 - Math.abs(clX)) / 20;
+      card.style.transform = `perspective(1000px) rotate3d(${clX},${-clY},0,${deg}deg)`;
     } else if (clX > winX / 2 && clY < winY / 2) {
-      deg = (clY * clX2) / 4000;
-
-      card.style.transform = `perspective(1000px) rotate3d(${clX2},${clY},0,${45 -
-        deg}deg)`;
+      deg = (winY / 2 - Math.abs(clY)) / 20 + (winX / 2 - Math.abs(clX2)) / 20;
+      card.style.transform = `perspective(1000px) rotate3d(${clX2},${clY},0,${deg}deg)`;
     } else if (clX < winX / 2 && clY > winY / 2) {
-      deg = (clY2 * clX) / 4000;
-
-      card.style.transform = `perspective(1000px) rotate3d(${-clX},${-clY2},0,${45 -
-        deg}deg)`;
+      deg = (winY / 2 - Math.abs(clY2)) / 20 + (winX / 2 - Math.abs(clX)) / 20;
+      card.style.transform = `perspective(1000px) rotate3d(${-clX},${-clY2},0,${deg}deg)`;
     } else if (clX > winX / 2 && clY > winY / 2) {
-      deg = (clY2 * clX2) / 4000;
-
-      card.style.transform = `perspective(1000px) rotate3d(${-clX2},${clY2},0,${45 -
-        deg}deg)`;
+      deg = (winY / 2 - Math.abs(clY2)) / 20 + (winX / 2 - Math.abs(clX2)) / 20;
+      card.style.transform = `perspective(1000px) rotate3d(${-clX2},${clY2},0,${deg}deg)`;
     }
   }
 });
