@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3d card</title>
+    <style>
+      body {
+        height: 100vh;
+        background-color: #31326c;
+        display: flex;
+        justify-content: center;
+      }
+      .card {
+        position: relative;
+        top: 25%;
+        width: 40vw;
+        max-width: 450px;
+        height: 40vw;
+        max-height: 450px;
+        background-color: #fff;
+        transform: perspective(1000px) rotate3d(0, 0, 0, 45deg);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card"></div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
