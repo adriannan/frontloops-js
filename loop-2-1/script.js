@@ -1,19 +1,19 @@
-// alert("ok");
-
 const btn = document.querySelector("button");
 const inp = document.querySelector(".inp");
 const inputs = [...document.querySelectorAll("input")];
 
-let invalidChars = ["-", "+", "e", ",", "."];
-
+let invalidChars = ["-", "+", "e", ",", ".", ""];
+let chars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "Backspace"].map(char =>
+  char.toString()
+);
 inputs.forEach(item => {
   item.addEventListener("input", e => {
     const { value, maxLength } = e.target;
     const next = e.target.nextElementSibling;
     if (value.length > maxLength) e.target.value = value.slice(0, maxLength);
-    // debugger;
-
     if (value !== "" && next !== null) {
+      e.target.value = value.slice(0, maxLength);
+      next.value = "";
       next.focus();
     }
   });
@@ -25,12 +25,14 @@ inputs.forEach(item => {
         return input.value;
       }).length;
       inputs[emptyInputIndex].focus();
+    } else {
+      e.target.value = "";
     }
   });
 });
 inputs.forEach(item => {
   item.addEventListener("keydown", e => {
-    if (invalidChars.includes(e.key)) {
+    if (!chars.includes(e.key)) {
       e.preventDefault();
     }
     if (e.key === "Backspace" && e.target.previousElementSibling !== null) {
@@ -41,4 +43,12 @@ inputs.forEach(item => {
       }
     }
   });
+});
+
+btn.addEventListener("click", () => {
+  if (inputs.filter(input => input.value).length < inputs.length) {
+    alert(`Ooops! Code is too short.
+Please, provide a right code`);
+    event.preventDefault();
+  }
 });
