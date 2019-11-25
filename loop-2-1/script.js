@@ -2,7 +2,6 @@ const btn = document.querySelector("button");
 const inp = document.querySelector(".inp");
 const inputs = [...document.querySelectorAll("input")];
 
-let invalidChars = ["-", "+", "e", ",", ".", ""];
 let chars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "Backspace"].map(char =>
   char.toString()
 );
@@ -12,7 +11,6 @@ inputs.forEach(item => {
     const next = e.target.nextElementSibling;
     if (value.length > maxLength) e.target.value = value.slice(0, maxLength);
     if (value !== "" && next !== null) {
-      e.target.value = value.slice(0, maxLength);
       next.value = "";
       next.focus();
     }
