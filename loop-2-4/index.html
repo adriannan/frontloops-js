@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+        Build a script for form validation.
+        It should validate form on its submit and should support required fields, emails
+        and field confirmation (should check if the value of the linked field is the same).
+        If form is invalid it shouldn't be submitted and errors must be shown.
+    -->
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" />
+      <p class="error" data-cat="name">Field is required</p>
+      <label for="email">Email</label>
+      <input type="email" id="email" />
+      <p class="error" data-cat="email">Enter valid email</p>
+
+      <label for="pass">Password</label>
+      <input type="password" id="pass" />
+      <p class="error" data-cat="pass">Field is required</p>
+
+      <label for="pass-conf">Confirm password</label>
+      <input type="password" id="pass-conf" />
+      <p class="error" data-cat="pass-conf">Confirmation failed</p>
+
+      <button type="submit">Submit</button>
+    </form>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
