@@ -1,0 +1,75 @@
+body {
+  height: 100vh;
+  background-color: #c44569;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.code-form {
+  background-color: #fff;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 5em auto;
+}
+.code-form h2 {
+  font-weight: normal;
+}
+input:nth-of-type(3) {
+  margin-right: 4em;
+}
+.code-inputs::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1em;
+  height: 1px;
+  background-color: lightgray;
+}
+.code-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+}
+input {
+  border: 1px solid lightgrey;
+  width: 4em;
+  height: 4em;
+  text-align: center;
+}
+input:not(:nth-of-type(3n)) {
+  border-right: 0px;
+}
+button {
+  display: block;
+  margin: 2em auto;
+  border: none;
+  background-color: #eaeaea;
+  padding: 1em;
+  cursor: pointer;
+}
+button:hover {
+  background-color: lightgray;
+}
+input:focus,
+button:focus {
+  outline: none;
+}
+button:focus {
+  background-color: lightgray;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

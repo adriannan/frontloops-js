@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Code</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+        Build a verification code form.
+        Focusing on any input should bring the focus to the first empty input.
+        Entering a value should switch the focus to the next input.
+        Deleting a value should delete the last filled value.
+        Submitting the form should alert the submitted code.
+    -->
+
+    <div class="code-form">
+      <h2>Enter code:</h2>
+      <form>
+        <div class="code-inputs">
+          <input type="number" maxlength="1" required />
+          <input type="number" maxlength="1" />
+          <input type="number" maxlength="1" />
+          <!-- <span></span> -->
+          <input type="number" maxlength="1" />
+          <input type="number" maxlength="1" />
+          <input type="number" maxlength="1" />
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
