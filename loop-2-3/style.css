@@ -1,0 +1,87 @@
+body {
+  height: 100vh;
+  background-color: #badc57;
+}
+.main {
+  position: relative;
+  width: 400px;
+  margin: 5em auto;
+}
+.slider {
+  background-color: #fff;
+  padding: 1.2em 0.3em;
+  border-radius: 0.3em;
+  overflow: scroll;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+  width: auto;
+}
+.card {
+  height: 8em;
+  border-radius: 0.3em;
+  margin: 0 0.3em;
+  padding: 0 0.3em;
+  scroll-snap-align: start;
+  position: relative;
+}
+.card:last-child:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -0.6em;
+  width: 0.6em;
+  height: 8em;
+}
+.box1 {
+  background-color: #333;
+  min-width: 4em;
+}
+.box2 {
+  background-color: #dedede;
+  min-width: 6em;
+}
+.card:nth-child(6) {
+  background-color: deeppink;
+}
+.box3 {
+  background-color: #9d9d9d;
+  min-width: 11em;
+}
+
+.btn {
+  position: absolute;
+  width: 2.4em;
+  height: 2.4em;
+  background-color: #fff;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px #666;
+  cursor: pointer;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-prev {
+  left: 0em;
+}
+.btn-next {
+  right: -2.4em;
+}
+.btn-disable {
+  display: none;
+}
