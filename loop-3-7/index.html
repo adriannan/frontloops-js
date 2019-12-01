@@ -7,9 +7,7 @@
     * {
       margin: 0;
       padding: 0;
-      /* translate: ; */
       cursor: none;
-      /* background-color: lightcoral; */
     }
     .cursor {
       width: 0.8em;
@@ -18,12 +16,11 @@
       border-radius: 100%;
       transform: translate(100px, 100px);
     }
-    .cursor__effect {
+
+    .cursor__effect--click {
       width: 5em;
       height: 5em;
       position: absolute;
-    }
-    .cursor__effect--click {
       border: 0.2em solid crimson;
       border-radius: 100%;
       animation: click 0.6s linear;
@@ -41,28 +38,29 @@
   </style>
   <body>
     <div class="cursor"></div>
-    <div class="cursor__effect"></div>
     <!--
         Build a custom red dot mouse cursor.
         Whenever you click - reversed ripple effect occurs.
      -->
     <script>
       const cursor = document.querySelector(".cursor");
-      const cursorClick = document.querySelector(".cursor__effect");
+
       addEventListener("mousemove", e => {
         cursor.style.transform = `translate(${e.pageX -
           cursor.clientWidth / 2}px, ${e.pageY - cursor.clientHeight / 2}px)`;
       });
       addEventListener("click", e => {
-        cursorClick.style.top = `${e.pageY -
-          cursorClick.clientHeight / 2 -
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("cursor__effect--click");
+        document.body.appendChild(newDiv);
+        newDiv.style.top = `${e.pageY -
+          newDiv.clientHeight / 2 -
           cursor.clientHeight / 4}px`;
-        cursorClick.style.left = `${e.pageX -
-          cursorClick.clientHeight / 2 -
+        newDiv.style.left = `${e.pageX -
+          newDiv.clientHeight / 2 -
           cursor.clientHeight / 4}px`;
-        cursorClick.classList.add("cursor__effect--click");
         setTimeout(() => {
-          cursorClick.classList.remove("cursor__effect--click");
+          document.body.removeChild(newDiv);
         }, 600);
       });
     </script>
