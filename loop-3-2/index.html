@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dot container</title>
+  </head>
+  <style>
+    body {
+      background-color: #12ac84;
+    }
+    .box {
+      width: 80vw;
+      max-width: 500px;
+      height: 80vw;
+      max-height: 500px;
+      background-color: #fff;
+      margin: 5em auto;
+      border-radius: 1%;
+      position: relative;
+    }
+    .dot:hover {
+      /* animation: click 1s linear; */
+    }
+    .dot {
+      position: relative;
+      display: block;
+      width: 0.9em;
+      height: 0.9em;
+      border-radius: 50%;
+      background-color: tomato;
+      transition: 0.1s ease-out;
+    }
+    @keyframes click {
+      from {
+        transform: scale(2);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
+  <body>
+    <div class="box">
+      <span class="dot"></span>
+    </div>
+    <!--
+        Build a card with a red dot inside that can be moved by keyboard arrows and can't cross the card borders
+    -->
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
